@@ -1,0 +1,161 @@
+ * {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+
+  }
+  .col-1 {
+    background: #111; 
+    flex: 1;
+    display: none;
+
+
+  }
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+  }
+  header {
+  height: 15vh;
+  background: #333;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  }
+  .span{
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    padding: 20px ;
+    margin: 0;
+    left:0;
+  }
+ .logo {
+  font-size: 30px;
+  padding: 20px 50px;
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  text-align: center;
+  position: relative;
+  left: 25%;
+}
+
+  header, nav {
+    padding: 1em;
+  }
+
+  h1 {
+        color: #525454;
+        font-size: 22px;
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
+
+
+
+.sidenav {
+    height: 100%;
+    width: 100%;
+   /* position: fixed; */
+
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+    background: #111;
+    
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    /*position: absolute; */
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+/* ____map______*/
+ #map {
+        bottom:0px;
+        height: 100%;
+        width: 100%;
+     
+      }
+   .map-container{
+        width: 100%;
+      }
+    
+
+/* _________filter________*/
+
+
+#myInput {
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+    /* Remove default list styling */
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+
+#myUL li a {
+    margin-top: -1px; /* Prevent double borders */
+    padding: 12px; /* Add some padding */
+    font-size: 18px; /* Increase the font-size */
+
+}
+
+
+
+
