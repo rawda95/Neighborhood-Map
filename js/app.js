@@ -3,6 +3,8 @@
       var map;
       var bounds;
        var largeInfowindow ;
+       var currentMarker = null;
+
 
      // These are the real estate listings that will be shown to the user.
         // Normally we'd have these in a database instead.
@@ -50,6 +52,11 @@
           markers.push(marker);
           // Create an onclick event to open an infowindow at each marker.
           marker.addListener('click', function() {
+          	if (currentMarker){
+          		currentMarker.setAnimation(null);
+          	} 
+          	currentMarker = this;
+          	toggleBounce(this);
           populateInfoWindow(this, largeInfowindow);
           });
         }
@@ -68,10 +75,22 @@
           infowindow.open(map, marker);
           // Make sure the marker property is cleared if the infowindow is closed.
           infowindow.addListener('closeclick', function() {
+          	infowindow.marker.setAnimation(null);
             infowindow.marker = null;
           });
         }
       }
+
+
+      function toggleBounce(marker) {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+
+
 
  
 
@@ -125,6 +144,11 @@ locations:ko.observableArray(locations),
       break;
     }
         }
+	if (currentMarker){
+      		currentMarker.setAnimation(null);
+      	} 
+      	currentMarker = elemMarekr;
+   toggleBounce(elemMarekr);
   populateInfoWindow(elemMarekr,largeInfowindow);
 },
 
@@ -185,6 +209,8 @@ $('#myUL').hide();
               locations.push(a);
             });
         }).fail(function (response, status, error) {
+        	alert('Couldn\'t load the foursquare');
+
            locations = [
           {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
           {title: 'Chelsea Loft', location: {lat: 40.7444883, lng: -73.9949465}},
